@@ -24,7 +24,9 @@ console.log(filterEvens([22, 2, 31, 110, 6, 13])); // returns [22,2,110,6]
 console.log("-- 4 -----------------------------");
 const friends = ["rika", "jenna", "bleda", "oliver", "itamar"];
 const filterItems = (arr, str) =>
-  arr.filter((el, i, arr) => arr[i].toLowerCase().includes(str.toLowerCase()));
+  arr
+    .filter((el, i, arr) => arr[i].toLowerCase().includes(str.toLowerCase()))
+    .map((el) => el[0].toUpperCase() + el.slice(1));
 console.log(filterItems(friends, "ka")); // ["Rika"];
 console.log(filterItems(friends, "e")); // ["Jenna", "Bleda", "Oliver"];
 
